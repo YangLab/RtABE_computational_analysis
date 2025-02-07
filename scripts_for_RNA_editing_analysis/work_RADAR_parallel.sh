@@ -1,0 +1,3 @@
+mkdir 04_RADAR_output
+
+parallel -j 4 "bash /data/rnomics10/yuanguohua/20220925_RNAtBE/RADAR_scripts/GATK_RNA_seq_HISAT2_BWA_20_1_15.sh RNA_Editing_Calling_Pipeline_HISAT2_BWA_followed_by_Samtools_mpileup  -1 /data/rnomics10/yuanguohua/20220925_RNAtBE/03_fqtrimmed/{1}_R1_trimmed.fq -2 /data/rnomics10/yuanguohua/20220925_RNAtBE/03_fqtrimmed/{1}_R2_trimmed.fq -o /data/rnomics10/yuanguohua/20220925_RNAtBE/04_RADAR_output/{1}_output  -n {1} -g hg38 -t 10  -p 0123 " ::: NT EGFP ADAR2-P3 ADAR2-A3D-P3 ADAR2-A3F-P3 ADAR2-CT2 ADAR2-A3D-CT2 ADAR2-A3F-CT2
